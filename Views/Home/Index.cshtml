@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<style>
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+       
+    }
+
+    .mySlides {
+        /*display: none;*/
+        box-shadow: 5px 5px 5px 5px mediumseagreen;
+        height: 300px;
+        object-fit: fill;
+    }
+    h1 {
+       color: mediumseagreen;
+    }
+</style>
+<br />
+
+<img src="~/Content/LandOfTheLiving.png" alt="LandofTheLivingLogo" class="center">
+
+<br />
+<h1> About us</h1>
+<h5>Land of the Living was initiated as a ministry of God Adventure in 2010 and is now a registered non-profit organization and Sec 18a Public Benefit Organization operating in East London, SA.</h5>
+<h5>We are a community of social entrepreneurs & mobilizers who exists to help stimulate long-term sustainable transformation within impoverished communities of the region, by enabling local stakeholders to both see and build upon what they already have.</h5>
+<h5>We do this through the integrated facilitation of HOPE community leaders network, an Entrepreneurial Training Centre, and Unantoni Endlini recycling enterprise.</h5>
+
+<style>
+
+</style>
+<body>
+    <br />
+    <br />
+    <div class="center">
+        <div class="w3-content w3-section" style="max-width:500px">
+            <img class="mySlides" src="~/Content/training.jpg" style="width:100%">
+            <img class="mySlides" src="~/Content/recycling.jpg" style="width:100%">
+            <img class="mySlides" src="~/Content/Hope.jpg" style="width:100%">
+        </div>
+    </div>
+    <br />
+
+    <img src="~/Content/Nar1.png" class="center">
+
+    <img src="~/Content/Nar2.png"  class="center">
+
+    <img src="~/Content/Nar3.png"  class="center">
+
+    <img src="~/Content/Nar4.png"  class="center">
+
+    <img src="~/Content/UML.png"  class="center">
+</body>
+
+
+    <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) { myIndex = 1 }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 2000); // Change image every 2 seconds
+        }
+    </script>
+

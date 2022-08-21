@@ -1,0 +1,209 @@
+﻿@model HW4.ViewModels.Recycling
+@{
+    ViewBag.Title = "Index";
+}
+<head>
+    <style>
+           h3, h4{
+               color: mediumseagreen;
+                         }
+
+            .container-fluid {
+                position: relative;
+                width: 100%;
+            }
+
+            #Overlay{
+                display: block;
+                width: 100%;
+                height: 250px;
+            }
+
+            #Recycle{
+                height: 400px;
+                width: 380px;
+                margin-left: 0;
+            }
+
+            #descrip{
+                font-size: 20px;
+            }
+            .overlay {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 100%;
+                width: 100%;
+                opacity: 0;
+                transition: .5s ease;
+                background-color: mediumseagreen;
+            }
+
+            .container-fluid:hover .overlay {
+                opacity: 0.4;
+            }
+
+            .text {
+ 
+                color: white;
+                font-size: 40px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+            }
+
+        .form-group {
+            width: 50%;
+            margin: auto;
+         
+        }
+
+        #formrow {
+            border: 2px solid mediumseagreen;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            padding: 30px;
+        }
+            
+
+         </style>
+</head>
+<body>
+    @*<br/>
+        <div class="container-fluid" id="overlaying">
+            <img src="~/Content/banner.png" />
+            <div class="overlay">
+                <div class="text">Hello World</div>
+            </div>
+        </div>
+
+        <div class="container">
+            <p> Info on recycling</p>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+        </div>*@
+
+    <br />
+    <br />
+    <div class="container-fluid">
+        <img src="~/Content/banner.png" alt="Avatar" class="image" id="Overlay">
+        <div class="overlay">
+            <div class="text">Recycling</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h3><b>What are we all about?</b></h3>
+        <br />
+        <p style="font-size: 16px">Unantoni Endlini Recycling</p>
+        <p>A registered recycling enterprise that serves as a platform for helping motivate, train & equip, and mentor/practically support unemployed youth to create their own work & livelihood.</p>
+        <br/>
+        <h4>Our Goals:</h4>
+        <br />
+        <p><span class="glyphicon glyphicon-trash"></span>  Reduce, Reuse and Recycle</p>
+        <p><span class="glyphicon glyphicon-trash"></span>  Aid the fight against waste</p>
+        <p><span class="glyphicon glyphicon-trash"></span>  Create a clean environement in South Africa</p>
+        <p><span class="glyphicon glyphicon-trash"></span>  Create sustainable jobs</p>
+
+
+        <br />
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4"><img src="~/Content/recycling1.jpg" id="Recycle" /></div>
+                <div class="col-sm-8" id="descrip">
+                    <p>We invite you to help us achieve these goals.<i> It is really simple to help.</i> We know that our planet needs every pair of hands available, start helping by either donating your recyclable waste or by volunteering to help collect waste.</p>
+                    <p>To get started fill out the form below</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+
+    <div class="container-fluid">
+        <div class="row" id="formrow">
+            <div class="col-sm-8">
+                <div class="form-group">
+
+                    @using (Html.BeginForm("Index", "Recycling", FormMethod.Post))
+                    {
+                    <h3 style="font-family: 'Lucida Console', 'Courier New' , monospace;">Recycling Volunteer Form</h3>
+                    <br/>
+                        <div>
+                            <div>
+                                <label for="RecName">Name:</label>
+                                <br />
+                                <input type="text" name="RecName" class="form-control" />
+                            </div>
+                            <div>
+                                <label for="RecSur">Surname:</label>
+                                <br />
+                                <input type="text" name="RecSur" class="form-control" />
+                            </div>
+                            <div>
+                                <label for="RecCell">Cell number:</label>
+                                <br />
+                                <input type="text" name="RecCell" class="form-control" />
+                            </div>
+                            <div>
+                                <label for="RecWaste">Waste Type:</label>
+                                <br />
+                                @*<input type="text" name="RecWaste" class="form-control" />*@
+                                <select class="form-control" name="RecWaste">
+                                    <option>Paper</option>
+                                    <option>Cardboard</option>
+                                    <option>Plastic</option>
+                                    <option>Glass</option>
+                                    <option>Metal</option>
+                                    <option>Food waste</option>
+
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="RecEstimated">Weight in kg:</label>
+                                <input type="number" name="RecEstimated" min="1" max="100" class="form-control" data-toggle="tooltip" title="Round down"/>
+                            </div>
+                            <div>
+                                <label for="RecPickUp">Name:</label>
+                                <input type="date" name="RecPickUp" class="form-control" />
+                            </div>
+                            <br/>
+                            <div>
+                                <input type="submit" class="btn btn-success" />
+                            </div>
+                        </div>
+
+                    }
+
+                </div>
+            </div>
+            <div class="col-sm-4"><img src="~/Content/Form.png" id="Recycle" /></div>
+        </div>
+        </div>
+
+
+        @*Cards maybe to display the differnet functions of the recycling*@
+
+</body>
+
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+
+
+
+

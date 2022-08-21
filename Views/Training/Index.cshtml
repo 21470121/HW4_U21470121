@@ -1,0 +1,117 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<style>
+    #cont {
+        border: 1px solid;
+        box-shadow: 5px 10px mediumseagreen;
+        padding: 5px;
+    }
+
+    .card-header {
+        text-align: center;
+        color: mediumseagreen;
+        font-family: "font-family: 'Lucida Console', 'Courier New' , monospace";
+        font-size: 35px;
+        text-shadow: 2px 2px lightgrey;
+    }
+
+    .form-group {
+        width: 50%;
+        margin: 60px;
+    }
+
+    #formrow {
+        border: 2px solid mediumseagreen;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        padding: 30px;
+    }
+    .container-fluid {
+        position: relative;
+        width: 100%;
+    }
+
+    #Form {
+        height: 500px;
+        width: 480px;
+        display: block;
+        margin-left: auto;
+        
+    }
+
+</style>
+
+<br/>
+<br/>
+<div class="container" id="cont">
+    <div class="card-header">Training</div>
+    <div class="card-body">
+        Through HOPE network relationships, in 2015 we began trying to address the high unemployment problem in our communities through a program called Unantoni Endlini – isiZulu for “What do you have in your home?” – a scriptural reference to 2 Kings 4:1-7 (where Elisha asks the widow what she has in her home, and her identified measure of oil becomes the key that God uses to multiply and provide her with a livelihood). This imagery conveys that everyone, even in the poorest of communities, potentially has some measure of passion, knowledge & skills, and local resources that they can identify, cultivate and utilize to create wealth and build a sustainable livelihood.
+
+        We began by working with our local community partners in Mdantsane (Mdantsane Community Church), Cambridge Location (Grace Community Baptist Church) and Mzamomhle (Lathitha Development Centre) to pilot a training for respective local residents in workplace readiness and small business skills, with the aim of helping them create their own work. We had a measure of initial success with this, reaching a total of 50 people – though ran into the common roadblock of longer-term sustainability for the program, both financially and programmatically
+    </div>
+    <br/>
+    <div class="card-footer"><i>Thus, we implore you, as a business owner or skilled individual, to help us equip those in need to sustainiably create a source of income for themselves.</i></div>
+</div>
+<br/>
+<br/>
+
+<p>Fill in the form below to volunteer to mentor and teach skills.</p>
+
+<br/>
+
+
+<div class="container-fluid">
+    <div class="row" id="formrow">
+        <div class="col-sm-8">
+            <div class="form-group">
+
+                @using (Html.BeginForm("Index", "Training", FormMethod.Post))
+                {
+                    <h3 style="font-family: 'Lucida Console', 'Courier New' , monospace;">Training Volunteer Form</h3>
+                    <br />
+                    <div>
+                        <div>
+                            <label for="TrName">Name:</label>
+                            <br />
+                            <input type="text" name="TrName" class="form-control" />
+                        </div>
+                        <div>
+                            <label for="TrSur">Surname:</label>
+                            <br />
+                            <input type="text" name="TrSur" class="form-control" />
+                        </div>
+                        <div>
+                            <label for="TrCell">Cell number:</label>
+                            <br />
+                            <input type="text" name="TrCell" class="form-control" />
+                        </div>
+                        <div>
+                            <label for="TrType">I am:</label>
+                            <br />
+                            @*<input type="text" name="RecWaste" class="form-control" />*@
+                            <select class="form-control" name="TrType">
+                                <option>Business Owner</option>
+                                <option>Skilled</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="TrDescription">Describe how you would mentor:</label>
+                            <textarea class="form-control" rows="5" name="TrDescription"></textarea>
+                        </div>
+                        <br />
+                        <div>
+                            <input type="submit" class="btn btn-success" />
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="col-sm-4"><img src="~/Content/Form.png" id="Form" /></div>
+    </div>
+</div>
+

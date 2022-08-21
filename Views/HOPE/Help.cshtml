@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "Help";
+}
+
+<style>
+
+    .form-group {
+        width: 50%;
+        margin: 60px;
+    }
+
+    #formrow {
+        border: 2px solid mediumseagreen;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        padding: 30px;
+    }
+
+    .container-fluid {
+        position: relative;
+        width: 100%;
+    }
+
+    #Form {
+        height: 500px;
+        width: 480px;
+        display: block;
+        margin-left: auto;
+    }
+
+</style>
+
+
+
+<div class="container-fluid">
+    <div class="row" id="formrow">
+        <div class="col-sm-8">
+            <div class="form-group">
+
+                @using (Html.BeginForm("Help", "HOPE", FormMethod.Post))
+                {
+                    <h3 style="font-family: 'Lucida Console', 'Courier New' , monospace;">Help Volunteer Form</h3>
+                    <br />
+                    <div>
+                        <div>
+                            <label for="HName">Name:</label>
+                            <br />
+                            <input type="text" name="HName" class="form-control" />
+                        </div>
+                        <div>
+                            <label for="HSur">Surname:</label>
+                            <br />
+                            <input type="text" name="HSur" class="form-control" />
+                        </div>
+                        <div>
+                            <label for="HCell">Cell number:</label>
+                            <br />
+                            <input type="text" name="HCell" class="form-control" />
+                        </div>
+                        <div>
+                            <label for="HType">Help with:</label>
+                            <br />
+                            @*<input type="text" name="RecWaste" class="form-control" />*@
+                            <select class="form-control" name="HType">
+                                <option>School Programme</option>
+                                <option>Soup Kitchen</option>
+                            </select>
+                        </div>
+
+                        <br />
+                        <div>
+                            <input type="submit" class="btn btn-success" />
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="col-sm-4"><img src="~/Content/Form.png" id="Form" /></div>
+    </div>
+</div>

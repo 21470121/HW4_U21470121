@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "Support";
+}
+
+<style>
+
+    .form-group {
+        width: 50%;
+        margin: 60px;
+    }
+
+    #formrow {
+        border: 2px solid mediumseagreen;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        padding: 30px;
+    }
+
+    .container-fluid {
+        position: relative;
+        width: 100%;
+    }
+
+    #Form {
+        height: 500px;
+        width: 480px;
+        display: block;
+        margin-left: auto;
+    }
+</style>
+
+
+
+<div class="container-fluid">
+    <div class="row" id="formrow">
+        <div class="col-sm-8">
+            <div class="form-group">
+
+                @using (Html.BeginForm("Support", "HOPE", FormMethod.Post))
+                {
+                    <h3 style="font-family: 'Lucida Console', 'Courier New' , monospace;">Support Volunteer Form</h3>
+                    <br />
+                    <div>
+                        <div>
+                            <label for="SName">Name:</label>
+                            <br />
+                            <input type="text" name="SName" class="form-control" />
+                        </div>
+                        <div>
+                            <label for="SSur">Surname:</label>
+                            <br />
+                            <input type="text" name="SSur" class="form-control" />
+                        </div>
+                        <div>
+                            <label for="SCell">Cell number:</label>
+                            <br />
+                            <input type="text" name="SCell" class="form-control" />
+                        </div>
+                        <div>
+                            <label for="SFor">I am:</label>
+                            <br />
+                            @*<input type="text" name="RecWaste" class="form-control" />*@
+                            <select class="form-control" name="SFor">
+                                <option>School Programme</option>
+                                <option>Soup Kitchen</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="SDonated">Describe how you would mentor:</label>
+                            <input type="number" name="SDonated" class="form-control" step="any" />
+                        </div>
+                        <br />
+                        <div>
+                            <input type="submit" class="btn btn-success" />
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="col-sm-4"><img src="~/Content/Form.png" id="Form" /></div>
+    </div>
+</div>
+

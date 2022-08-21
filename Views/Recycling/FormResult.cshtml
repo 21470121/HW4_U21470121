@@ -1,0 +1,40 @@
+﻿@model List<HW4.ViewModels.Recycling>
+@{
+    ViewBag.Title = "FormResult";
+}
+
+<style>
+    h2 {
+        color: mediumseagreen;
+        text-align: center;
+    }
+</style>
+
+<h2>Thank you, @ViewBag.Name for Volunteering to be a part of our recycling program. This is amazing and we greatly appreciate your participation. </h2>
+<br />
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <p>We will be in contact with you to get a pick up location and get an address.</p>
+            <p>We would like to show you the impact of those like you that have taken the initiative to help out and recycle and ultimately clean our planet whilst providing employment opportunities. Below is a list of the recent donations: </p>
+
+            <br />
+            <br />
+
+
+
+            @if (Model != null)
+            {
+                foreach (var recyc in Model)
+                {
+        <p><span class="glyphicon glyphicon-trash"></span> @recyc.Info() </p>
+                }
+
+            }
+
+
+
+        </div>
+        </div>
+</div>
+
